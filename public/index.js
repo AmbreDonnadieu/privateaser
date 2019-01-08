@@ -162,3 +162,31 @@ for(var i = 0; i<events.length; i++)
 		}
 	}
 }
+
+
+//Step 2
+for(var i = 0; i<events.length; i++)
+{
+	for(var j=0; j<bars.length; j++)
+	{
+		if(events[i].barId == bars[j].id)
+		{
+			if(events[i].persons >10 && events[i].persons <=20)
+			{
+				events[i].price = 0.9*(events[i].time*bars[j].pricePerHour + events[i].persons * bars[j].pricePerPerson);
+			}
+			if(events[i].persons>20 && events[i].persons<=60)
+			{
+				events[i].price = 0.7*(events[i].time*bars[j].pricePerHour + events[i].persons * bars[j].pricePerPerson);
+			}
+			if(events[i].persons>60)
+			{
+				events[i].price = 0.5*(events[i].time*bars[j].pricePerHour + events[i].persons * bars[j].pricePerPerson);
+			}
+			else 
+			{
+				events[i].price = events[i].time*bars[j].pricePerHour + events[i].persons * bars[j].pricePerPerson;
+			}
+		}
+	}
+}
