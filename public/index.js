@@ -197,3 +197,26 @@ for (var i=0; i<events.length; i++)
 		events[i].commission.privateaser += events[i].persons;
 	}
 }
+
+// Step 5 
+for (var i=0; i<actors.length; i++)
+{
+	for(var j=0; j<events.length; j++)
+	{
+		if (events[j].id == actors[i].eventId)
+		{
+			if(events[j].deductibleReduction = true)
+			{
+				actors[i].payment[0].amount= events[j].price+ events[j].persons;
+			}
+			else
+			{
+				actors[i].payment[0].amount= events[j].price;
+			}
+			actors[i].payment[1].amount= events[j].price * 0.7; // the bar
+			actors[i].payment[2].amount = events[j].commission.insurance;//the insurance
+			actors[i].payment[3].amount = events[j].commission.treasury;//the treasury
+			actors[i].payment[4].amount = events[j].commission.privateaser; // privateaser part
+		}
+	}
+}
