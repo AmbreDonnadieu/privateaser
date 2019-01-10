@@ -167,16 +167,25 @@ for(var i = 0; i<events.length; i++)
 //Step 2
 for(var i = 0; i<events.length; i++)
 {
-			if(events[i].persons >10 && events[i].persons <=20)
-			{
-				events[i].price = 0.9*events[i].price;
-			}
-			if(events[i].persons>20 && events[i].persons<=60)
-			{
-				events[i].price = 0.7*events[i].price;
-			}
-			if(events[i].persons>60)
-			{
-				events[i].price = 0.5*events[i].price;
-			}
+		if(events[i].persons >10 && events[i].persons <=20)
+		{
+			events[i].price = 0.9*events[i].price;
+		}
+		if(events[i].persons>20 && events[i].persons<=60)
+		{
+			events[i].price = 0.7*events[i].price;
+		}
+		if(events[i].persons>60)
+		{
+			events[i].price = 0.5*events[i].price;
+		}
 }
+
+//Step 3 
+for (var i = 0; i<events.length; i++)
+{
+	events[i].commission.insurance = events[i].price * 0.15;
+	events[i].commission.treasury = events[i].persons;
+	events[i].commission.privateaser = events[i].price *0.3 - events[i].commission.insurance - events[i].commission.treasury;
+}
+
