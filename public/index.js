@@ -198,7 +198,7 @@ for (var i=0; i<events.length; i++)
 	}
 }
 
-// Step 5 
+// Step 5 miaou
 for (var i=0; i<actors.length; i++)
 {
 	for(var j=0; j<events.length; j++)
